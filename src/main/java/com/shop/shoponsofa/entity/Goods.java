@@ -11,13 +11,15 @@ public class Goods {
     private String name;
     private Integer price;
     private String date;
-    private Boolean isActive;
+    private Boolean isActive;//inStoke
     private Double width;
     private Double length;
     private Double height;
     @Column(name = "text")
     private String description;
     private String imageUrl;
+    @ManyToOne
+    private Group group;
 
     public Goods() {
     }
