@@ -1,6 +1,7 @@
 package com.shop.shoponsofa.entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class User {
@@ -17,6 +18,9 @@ public class User {
     @OneToOne
     @JoinColumn(name = "cart_id")
     private Cart cart;
+
+    @OneToMany
+    private Set<Order> order;
 
     public User() {
     }

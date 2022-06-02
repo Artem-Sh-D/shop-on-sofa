@@ -12,6 +12,12 @@ public class BuyItem {
     @OneToOne
     private Goods good;
 
+    @ManyToOne
+    private Cart cart;
+
+    @ManyToOne
+    private Order order;
+
     private Integer amount;
 
     public BuyItem() {
