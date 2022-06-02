@@ -1,9 +1,7 @@
 package com.shop.shoponsofa.entity;
 
-import com.shop.shoponsofa.dto.BuyItem;
-
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Cart {
@@ -11,7 +9,8 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private List<BuyItem> buyItems;
+    @OneToMany
+    private Set<BuyItem> buyItems;
 
     @OneToOne()
     private User user;
