@@ -20,6 +20,7 @@ public class User {
     private Cart cart;
 
     @OneToMany
+    @JoinColumn(name = "order_id")
     private Set<Order> order;
 
     public User() {

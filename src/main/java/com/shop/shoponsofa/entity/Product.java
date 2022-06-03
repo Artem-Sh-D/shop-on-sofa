@@ -3,7 +3,7 @@ package com.shop.shoponsofa.entity;
 import javax.persistence.*;
 
 @Entity
-public class Goods {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,7 +21,7 @@ public class Goods {
     @ManyToOne
     private Group group;
 
-    public Goods() {
+    public Product() {
     }
 
     public Long getId() {

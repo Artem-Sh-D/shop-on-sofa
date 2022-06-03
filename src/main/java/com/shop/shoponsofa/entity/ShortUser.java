@@ -1,9 +1,7 @@
 package com.shop.shoponsofa.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class ShortUser {
@@ -13,6 +11,14 @@ public class ShortUser {
 
     private String name;
     private String phoneNumber;
+
+    @OneToOne
+    @JoinColumn(name = "cart_id")
+    private Cart cart;
+
+    @OneToMany
+    @JoinColumn(name = "order_id")
+    private Set<Order> order;
 
     public ShortUser() {
     }

@@ -10,12 +10,15 @@ public class BuyItem {
     private Long id;
 
     @OneToOne
-    private Goods good;
+    @JoinColumn(name = "product_id")
+    private Product product;
 
     @ManyToOne
+    @JoinColumn(name = "cart_id")
     private Cart cart;
 
     @ManyToOne
+    @JoinColumn(name = "order_id")
     private Order order;
 
     private Integer amount;
@@ -31,12 +34,12 @@ public class BuyItem {
         return id;
     }
 
-    public Goods getGood() {
-        return good;
+    public Product getProduct() {
+        return product;
     }
 
-    public void setGood(Goods good) {
-        this.good = good;
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     public Integer getAmount() {
