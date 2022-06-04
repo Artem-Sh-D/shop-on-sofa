@@ -10,7 +10,6 @@ public class BuyItem {
     private Long id;
 
     @OneToOne
-    @JoinColumn(name = "product_id")
     private Product product;
 
     @ManyToOne

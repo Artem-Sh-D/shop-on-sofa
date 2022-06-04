@@ -13,11 +13,9 @@ public class ShortUser {
     private String phoneNumber;
 
     @OneToOne
-    @JoinColumn(name = "cart_id")
     private Cart cart;
 
     @OneToMany
-    @JoinColumn(name = "order_id")
     private Set<Order> order;
 
     public ShortUser() {

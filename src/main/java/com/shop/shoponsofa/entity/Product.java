@@ -11,14 +11,16 @@ public class Product {
     private String name;
     private Integer price;
     private String date;
-    private Boolean isActive;//inStoke
+    private Boolean isStoke;
     private Double width;
     private Double length;
     private Double height;
     @Column(name = "text")
     private String description;
     private String imageUrl;
+
     @ManyToOne
+    @JoinColumn(name = "group_id")
     private Group group;
 
     public Product() {
@@ -56,12 +58,20 @@ public class Product {
         this.date = date;
     }
 
-    public Boolean getActive() {
-        return isActive;
+    public Boolean getStoke() {
+        return isStoke;
     }
 
-    public void setActive(Boolean active) {
-        isActive = active;
+    public void setStoke(Boolean stoke) {
+        isStoke = stoke;
+    }
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
     }
 
     public Double getWidth() {

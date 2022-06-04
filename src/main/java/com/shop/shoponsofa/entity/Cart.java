@@ -10,11 +10,9 @@ public class Cart {
     private Long id;
 
     @OneToMany
-    @JoinColumn(name = "buyItems_id")
     private Set<BuyItem> buyItems;
 
     @OneToOne
-    @JoinColumn(name = "user_id")
     private User user;
 
     public Cart() {

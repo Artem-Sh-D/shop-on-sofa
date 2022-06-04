@@ -14,7 +14,6 @@ public class Order {
     private String numberOrder;
 
     @OneToMany
-    @JoinColumn(name = "buyItems_id")
     private Set<BuyItem> buyItems;
 
     @ManyToOne

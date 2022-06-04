@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,11 +17,9 @@ public class User {
     private String date;
 
     @OneToOne
-    @JoinColumn(name = "cart_id")
     private Cart cart;
 
     @OneToMany
-    @JoinColumn(name = "order_id")
     private Set<Order> order;
 
     public User() {
